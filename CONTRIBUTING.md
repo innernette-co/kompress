@@ -32,7 +32,7 @@ npm run verify        # exercises every fixture through bundled ffmpeg + ffprobe
 
 The husky `pre-push` hook runs all four. The `pre-commit` hook runs lint-staged on changed files. The `commit-msg` hook enforces [Conventional Commits](https://www.conventionalcommits.org/) via commitlint.
 
-There is no CI — quality is enforced locally. **Don't add GitHub Actions workflows.** See `PROJECT_GUIDE.md` hard rule #2.
+There is no CI — quality is enforced locally. **Don't add GitHub Actions workflows or Dependabot configuration.** Dependabot update jobs also use GitHub Actions runners. See `PROJECT_GUIDE.md` hard rule #2.
 
 ## Commit style
 

@@ -17,7 +17,11 @@ files get compressed in-place with a `-compressed` suffix.
    for honesty. Don't reintroduce cross-platform release tooling without asking.
 2. **No GitHub Actions / no CI.** User preference (cost-driven). All quality
    gates run locally via git hooks (husky). If you want a check enforced, add it
-   to `.husky/pre-push` — never to `.github/workflows/`.
+   to `.husky/pre-push`. Do not add `.github/workflows/` or
+   `.github/dependabot.yml`: Dependabot update jobs run as dynamic GitHub
+   Actions workflows even without workflow files in the repository. Standard
+   Dependabot jobs do not use the included Actions minutes. Keep Dependabot
+   security updates disabled in the GitHub repository settings too.
 3. **`src-tauri/tauri.conf.json` is the version source of truth.**
    `release.js` syncs `package.json` and `package-lock.json` from it. Never
    hand-edit the latter two to bump the version.
